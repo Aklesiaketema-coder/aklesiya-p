@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aklesiya | Web Developer</title>
+
+<style>
+:root {
+  --accent: #10b981;
+  --dark: #020617;
+  --light: #ffffff;
+  --muted: #9ca3af;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: #f3f4f6;
+  color: #111;
+  transition: 0.3s;
+}
+
+/* DARK MODE */
+body.dark {
+  background: var(--dark);
+  color: #e5e7eb;
+}
+
+/* NAV */
+nav {
+  background: white;
+  padding: 18px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body.dark nav {
+  background: var(--dark);
+}
+
+nav h2 {
+  color: var(--accent);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+}
+
+#modeToggle {
+  border: none;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: 90vh;
+  padding: 0 80px;
+  background: linear-gradient(120deg, var(--dark) 55%, #f9fafb 55%);
+}
+
+body.dark .hero {
+  background: var(--dark);
+}
+
+.hero-text {
+  max-width: 550px;
+  color: white;
+}
+
+.hero-text span {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  margin: 15px 0;
+}
+
+.hero-text p {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.hero-btns a {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 14px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-right: 15px;
+}
+
+.btn-main {
+  background: var(--accent);
+  color: white;
+}
+
+.btn-outline {
+  border: 2px solid var(--accent);
+  color: var(--accent);
+}
+
+/* SECTIONS */
+.choose {
+  padding: 80px;
+  background: white;
+  text-align: center;
+}
+
+body.dark .choose {
+  background: var(--dark);
+}
+
+.choose h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.choose-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+/* CARDS */
+.card {
+  padding: 30px;
+  border-radius: 18px;
+  background: #f9fafb;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+body.dark .card {
+  background: #020617;
+}
+
+/* PROJECTS */
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.project-card img {
+  width: 100%;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.1);
+}
+
+.project-info {
+  position: absolute;
+  inset: 0;
+  background: rgba(2,6,23,0.85);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 0.4s;
+  padding: 20px;
+}
+
+.project-card:hover .project-info {
+  opacity: 1;
+}
+
+/* CONTACT FORM */
+.contact-form {
+  max-width: 500px;
+  margin: 30px auto 0;
+  display: grid;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  font-size: 15px;
+}
+
+.contact-form button {
+  padding: 14px;
+  border-radius: 30px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    padding: 60px 30px;
+    text-align: center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <h2>Aklesiya</h2>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button id="modeToggle">🌙</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <span>Available on Upwork</span>
+    <h1>I Build Websites<br>That Convert Clients</h1>
+    <p>
+      I help businesses and individuals get fast,
+      responsive, and professional websites with clean code.
+    </p>
+
+    <div class="hero-btns">
+      <a href="#contact" class="btn-main">Hire Me</a>
+      <a href="#projects" class="btn-outline">View Work</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="choose">
+  <h2>Why Choose Me</h2>
+  <div class="choose-grid">
+    <div class="card">Clean & Maintainable Code</div>
+    <div class="card">Responsive Design</div>
+    <div class="card">Fast Delivery</div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="choose">
+  <h2>Recent Projects</h2>
+  <div class="choose-grid">
+    <div class="project-card">
+      <img src="images/project1.jpg">
+      <div class="project-info">
+        <h3>Business Website</h3>
+        <p>Responsive & modern design</p>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="images/project2.jpg">
+      <div class="project-info">
+        <h3>Portfolio</h3>
+        <p>Personal branding website</p>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="images/project3.jpg">
+      <div class="project-info">
+        <h3>Landing Page</h3>
+        <p>High conversion layout</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="choose">
+  <h2>Let’s Work Together</h2>
+  <form class="contact-form">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Tell me about your project" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<script>
+const toggle = document.getElementById("modeToggle");
+toggle.onclick = () => {
+  document.body.classList.toggle("dark");
+  toggle.textContent =
+    document.body.classList.contains("dark") ? "☀️" : "🌙";
+};
+</script>
+
+</body>
+</html>
